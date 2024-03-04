@@ -1,0 +1,22 @@
+{
+  "firedEmployees": [
+    {
+      "firstName": "Martin",
+      "lastName": "Fox",
+      "employeeNumber": "3571",
+      "position": "Associate",
+      "status": "Inactive",
+      "reason": "Moving out of state",
+      "dateOfTerm": "Tue Feb 06 2024"
+    },
+    {
+      "firstName": "Alex",
+      "lastName": "Wilson",
+      "employeeNumber": "2398",
+      "position": "Assistant Manager",
+      "status": "Inactive",
+      "reason": "moving",
+      "dateOfTerm": "Wed Feb 07 2024"
+    }
+  ]
+}

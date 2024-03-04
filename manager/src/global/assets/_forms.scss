@@ -1,0 +1,158 @@
+@import '../variables';
+
+Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .fieldWrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    label {
+      position: absolute;
+      bottom: 0;
+      width: 110%;
+    }
+
+    .focused {
+      transform: translateY(-150%);
+      transition: transform .2s ease;
+    }
+
+    ::placeholder {
+      opacity: 0;
+    }
+
+    :focus::placeholder {
+      opacity: 1;
+    }
+
+    input, select {
+      font-size: 1rem;
+      background-color: white;
+      outline: none;
+      border: none;
+      margin-top: 0;
+      padding: 0;
+      height: 30px;
+      width: 100%;
+      border-bottom: 1px solid black;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    input[type='text'], input[type='email'], select {
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    input[type='radio'] {
+      width: 20%;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    input:focus {
+      border-bottom: 2px solid rgb(0, 32, 158);
+      transition: border .1s;
+    }
+
+    .hasError {
+      border-bottom: 1px solid rgba(255, 0, 0);
+      transition: border .1s;
+    }
+
+    .noError {
+      border-bottom: 1px solid rgba(0, 128, 0);
+    }
+
+    .errorMessage {
+      display: none;
+    }
+
+    .radio {
+      height: 25px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .multiWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    position: relative;
+
+    #doh {
+      width: 30%;
+    }
+
+    #employeeNumber {
+      width: 65%;
+    }
+
+    #firstName, #lastName {
+      width: 40%;
+    }
+
+    #middleInit {
+      width: 10%;
+    }
+
+    #city {
+      width: 50%;
+    }
+
+    #state {
+      width: 15%;
+    }
+
+    #zip {
+      width: 25%;
+    }
+
+    #areaCode {
+      width: 25%;
+      margin-right: 8%;
+    }
+
+    #address, #email {
+      width: 100%;
+    }
+
+    #position {
+      width: 35%;
+    }
+
+    #wage {
+      width: 25%;
+    }
+
+    #hours {
+      position: absolute;
+      top: 0;
+      left: 55%;
+      transform: translateX(-55%);
+      width: 25%;
+    }
+  }
+
+  #phoneMultiWrapper {
+    justify-content: flex-start;
+  }
+
+  .buttonContainer {
+    margin-top: 100px;
+  }
+}

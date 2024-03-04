@@ -1,0 +1,10 @@
+@import '../global/variables';
+
+*, *:before, *:after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: $primaryFont;
+  color: black;
+}

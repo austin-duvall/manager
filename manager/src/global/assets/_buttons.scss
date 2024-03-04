@@ -1,0 +1,20 @@
+@import '../variables';
+
+button {
+  width: 175px;
+  height: 25px;
+  background-color: $accent;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: $boxShadow;
+  cursor: pointer;
+  margin: 0 2% 0 2%;
+
+  &:hover {
+    background-color: rgb(255, 255, 255);
+    color: $accent;
+  }
+
+}

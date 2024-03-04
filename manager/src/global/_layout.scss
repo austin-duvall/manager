@@ -1,0 +1,41 @@
+@import './variables';
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  #sidebar {
+    height: 100%;
+    width: 5%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  #search {
+    height: 10%;
+    width: 95%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  #content {
+    width: 95%;
+    height: 90%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+  }
+}

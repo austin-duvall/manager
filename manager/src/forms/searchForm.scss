@@ -1,0 +1,22 @@
+@import '../global/variables';
+
+.searchForm {
+  position: relative;
+
+  input {
+    background-color: rgb(228, 228, 228);
+    border: none;
+    padding: 2%;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    box-shadow: $boxShadow;
+    list-style-type: none;
+    background-color: white;
+    padding: 2%;
+  }
+}

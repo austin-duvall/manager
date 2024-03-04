@@ -1,0 +1,26 @@
+@import '../../../global/variables';
+
+.employeeList {
+  h1 {
+    font-size: 3rem;
+  }
+
+  ul {
+
+    li {
+      display: flex;
+
+      a {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        :nth-child(2) {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}
