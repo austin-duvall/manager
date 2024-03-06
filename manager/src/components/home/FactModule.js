@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const easeOutQuad = t => t * (2 - t);
 const frameDuration = 1000 / 60;
 
-const CountUpAnimation = ({ number, duration = 2000 }) => {
+const CountUpAnimation = ({ number, duration = 7000 }) => {
   const countTo = parseInt(number, 10);
   const [count, setCount] = useState(0);
 
@@ -26,11 +26,14 @@ const CountUpAnimation = ({ number, duration = 2000 }) => {
   return <span>{Math.floor(count)}</span>;
 };
 
-export default function FactModule({ header, numberOne, numberTwo, key }) {
+export default function FactModule({ header, numberOne, numberTwo, id, dollars }) {
+
+
   return (
-    <li key={key}>
+    <li key={id}>
       {!numberTwo ? (
         <p>
+          {dollars}
           <CountUpAnimation number={numberOne}></CountUpAnimation>
         </p>
       ) : (
@@ -38,8 +41,7 @@ export default function FactModule({ header, numberOne, numberTwo, key }) {
           <CountUpAnimation number={numberOne}></CountUpAnimation> years, <CountUpAnimation number={numberTwo}></CountUpAnimation> months
         </p>
       )}
-
-      <p>{header}</p>
+      <h1 id={id}>{header}</h1>
     </li>
   )
 }

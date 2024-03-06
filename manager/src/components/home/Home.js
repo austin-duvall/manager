@@ -4,7 +4,6 @@ import FactModule from './FactModule';
 import { differenceInDays } from 'date-fns';
 
 export default function Home() {
-  // Initialize state with values from localStorage if available
   const [employeeCount, setEmployeeCount] = useState(
     Number(localStorage.getItem('employeeCount')) || 0
   );
@@ -40,27 +39,26 @@ export default function Home() {
 
       const hourlyWage = employees.reduce((acc, employee) => acc + parseFloat(employee.wage), 0);
       const avgWage = hourlyWage / employeeCount;
-      setAverageWage(avgWage.toFixed(2)); // Keeping two decimal places for wage
+      setAverageWage(avgWage.toFixed(2));
     }
-  }, [employees]); // Ensure effect runs when `employees` changes
+  }, [employees]);
 
-  // Effect to store state changes in localStorage
   useEffect(() => {
     localStorage.setItem('employeeCount', employeeCount.toString());
     localStorage.setItem('averageServiceYears', averageServiceYears);
     localStorage.setItem('averageServiceMonths', averageServiceMonths);
     localStorage.setItem('averageWage', averageWage.toString());
-  }, [employeeCount, averageServiceYears, averageServiceMonths, averageWage]); // Dependencies array includes the state variables to watch
+  }, [employeeCount, averageServiceYears, averageServiceMonths, averageWage]);
 
   return (
     <div className='home'>
-      <h1>Welcome to Centric</h1>
-      <h1>Fast Facts</h1>
-      <button onClick={() => console.log(averageServiceMonths)}>console</button>
+      <h1>Welcome to Northbound Outfitters</h1>
+      <h2>Powered by Centric</h2>
+      <h3>Fast Facts</h3>
       <ul>
-        <FactModule header='Employees' numberOne={employeeCount} />
-        <FactModule header='Average Service Time' numberOne={averageServiceYears} numberTwo={averageServiceMonths} content='years' />
-        <FactModule header='Average Hourly Wage' numberOne={averageWage} />
+        <FactModule header='Employees' id='employeesFact' numberOne={employeeCount} />
+        <FactModule header='Average Hourly Wage' id='wageFact' dollars='$' numberOne={averageWage} />
+        <FactModule header='Average Service Time' id='serviceFact' numberOne={averageServiceYears} numberTwo={averageServiceMonths} content='years' />
       </ul>
     </div>
   );
