@@ -3,7 +3,7 @@ import EmployeeList from './EmployeeList';
 
 export default function Find() {
   return (
-    <div>
+    <div className='find'>
       <EmployeeList />
     </div>
   )

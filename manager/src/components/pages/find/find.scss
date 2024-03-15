@@ -1,19 +1,55 @@
 @import '../../../global/variables';
 
-.employeeList {
-  h1 {
-    font-size: 3rem;
-  }
+.find {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-  ul {
+  .employeeList {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: 3px solid green;
+
+    h1 {
+      font-size: 3rem;
+    }
 
     li {
       display: flex;
+      margin-top: 2%;
+    }
+
+    .sortBy {
+      display: flex;
+      border: 1px solid blue;
+
+      img {
+        height: 20px;
+      }
+
+      .flip {
+        transform: rotate(180deg);
+      }
+
+      button {
+        width: 100px;
+      }
+
+      .toggled {
+        background-color: green;
+      }
+    }
+
+    .employees {
+      border: 1px solid red;
 
       a {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        border-bottom: 1px solid black;
+        text-decoration: none;
 
         :nth-child(2) {
           position: absolute;
@@ -24,3 +60,4 @@
     }
   }
 }
+
