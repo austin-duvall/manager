@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const easeOutQuad = t => t * (2 - t);
 const frameDuration = 1000 / 60;
 
-const CountUpAnimation = ({ number, duration = 7000 }) => {
+const CountUpAnimation = ({ number, duration = 5000 }) => {
   const countTo = parseInt(number, 10);
   const [count, setCount] = useState(0);
 
@@ -12,7 +12,7 @@ const CountUpAnimation = ({ number, duration = 7000 }) => {
     const totalFrames = Math.round(duration / frameDuration);
     const counter = setInterval(() => {
       frame++;
-      const progress = easeOutQuad(frame / totalFrames);
+      const progress = frame / totalFrames;
       setCount(countTo * progress);
 
       if (frame === totalFrames) {

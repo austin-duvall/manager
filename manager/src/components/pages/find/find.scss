@@ -9,7 +9,6 @@
     display: flex;
     flex-direction: column;
     width: 40%;
-    border: 3px solid green;
 
     h1 {
       font-size: 3rem;
@@ -22,7 +21,22 @@
 
     .sortBy {
       display: flex;
-      border: 1px solid blue;
+      align-items: center;
+      position: relative;
+      height: 45px;
+      border: 1px solid red;
+      overflow: hidden;
+
+      .sortByHeader {
+        cursor: pointer;
+        z-index: 1;
+        background-color: white;
+        border: 1px solid green;
+        height: 100%;
+
+        h2 {
+        }
+      }
 
       img {
         height: 20px;
@@ -39,10 +53,26 @@
       .toggled {
         background-color: green;
       }
+
+      ul {
+        position: absolute;
+        left: -100%;
+        transition: left .5s ease;
+        z-index: 0;
+        border: 1px solid red;
+
+        li {
+          margin: 0;
+        }
+      }
+
+      .slideOut {
+        position: absolute;
+        left: 10%;
+      }
     }
 
     .employees {
-      border: 1px solid red;
 
       a {
         display: flex;
@@ -55,6 +85,7 @@
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
+          font-weight: bold;
         }
       }
     }

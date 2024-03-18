@@ -14,6 +14,7 @@ export default function EmployeeList() {
   const [alphStyle, setAlphStyle] = useState(false);
   const [numStyle, setNumStyle] = useState(false);
   const [posStyle, setPosStyle] = useState(false);
+  const [ulSlide, setUlSlide] = useState(false);
 
   const positionOrder = {
     'Store Manager': 1,
@@ -74,9 +75,11 @@ export default function EmployeeList() {
   return (
     <div className='employeeList'>
       <h1>Find Employee</h1>
-      <div className='sortBy'>
-        <h2>Sort by:</h2>
-        <ul>
+      <div className='sortBy' onMouseLeave={() => setUlSlide(false)}>
+        <div className='sortByHeader'>
+          <h2 onMouseEnter={() => setUlSlide(true)}>Sort by</h2>
+        </div>
+        <ul className={ulSlide ? 'slideOut' : ''}>
           <li>
             <button
               type='button'
